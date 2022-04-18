@@ -1,0 +1,16 @@
+{
+  "name": "disciplina-indexer",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ hbb228/disciplina-indexer",
+    "create-local": "graph create --node http://localhost:8020/ hbb228/disciplina-indexer",
+    "remove-local": "graph remove --node http://localhost:8020/ hbb228/disciplina-indexer",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 hbb228/disciplina-indexer"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.29.0",
+    "@graphprotocol/graph-ts": "0.26.0"
+  }
+}

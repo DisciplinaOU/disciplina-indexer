@@ -1,0 +1,26 @@
+specVersion: 0.0.1
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Disciplina
+    network: rinkeby
+    source:
+      address: "0x0972Aba5efAC051643dB1A2936739DD27847C225"
+      abi: Disciplina
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - NewChain
+        - NewHeader
+      abis:
+        - name: Disciplina
+          file: ./abis/Disciplina.json
+      eventHandlers:
+        - event: NewChain(address,bytes32,bytes32,uint64)
+          handler: handleNewChain
+        - event: NewHeader(address,bytes32,bytes32,uint64)
+          handler: handleNewHeader
+      file: ./src/mapping.ts
