@@ -1,6 +1,7 @@
-type ExampleEntity @entity {
-  id: ID!
-  count: BigInt!
+type PrivateBlockHeader @entity {
+  id: ID! # tx id
   sender: Bytes! # address
-  genesisHash: Bytes! # bytes32
+  prevHash: Bytes! # bytes32
+  merkleRoot: Bytes! # bytes32
+  size: BigInt!
 }
